@@ -1,0 +1,6 @@
+{
+  "name": "GROW PUZZLE DIGITAL — Petualangan Mengenal Peta",
+  "description": "Game edukasi interaktif IPAS Kelas IV SD Fase B Mengenal Peta dengan pendekatan Growth Mindset, puzzle edukasi, petualangan 25 tantangan, dan dashboard guru.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
