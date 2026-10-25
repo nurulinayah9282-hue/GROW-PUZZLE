@@ -14,6 +14,7 @@ import {
   Sprout,
   GraduationCap,
   Smile,
+  BookmarkCheck,
 } from 'lucide-react';
 import { audioManager } from '../utils/audio';
 import { User as FirebaseUser } from 'firebase/auth';
@@ -410,6 +411,27 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="bg-amber-500 text-white text-[9px] px-1.5 py-0.2 rounded-full uppercase tracking-tighter">
                 Baru
               </span>
+            </button>
+
+            {/* Dedicated Daftar Pustaka & Sumber Media Button in Nav Bar */}
+            <button
+              onClick={() => {
+                audioManager.playClickSound();
+                onNavigate('bibliography');
+              }}
+              title="Daftar Pustaka, Rujukan Kurikulum & Sumber Media"
+              className={`group flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer select-none border shadow-xs ${
+                currentPage === 'bibliography'
+                  ? 'bg-[#123D68] text-white border-sky-600 ring-2 ring-sky-300 scale-102'
+                  : 'bg-white text-slate-700 hover:bg-slate-50 hover:text-slate-900 border-slate-200 hover:scale-102'
+              }`}
+            >
+              <BookmarkCheck
+                className={`w-4 h-4 transition-transform group-hover:scale-110 ${
+                  currentPage === 'bibliography' ? 'text-amber-300' : 'text-sky-600'
+                }`}
+              />
+              <span>Daftar Pustaka</span>
             </button>
           </div>
         </nav>

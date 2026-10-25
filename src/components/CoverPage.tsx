@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavigationPage } from '../types';
-import { Play, BookOpen, Compass, Sparkles, Volume2, Users } from 'lucide-react';
+import { Play, BookOpen, Compass, Sparkles, Volume2, Users, BookmarkCheck } from 'lucide-react';
 import { audioManager } from '../utils/audio';
 
 interface CoverPageProps {
@@ -163,7 +163,7 @@ export const CoverPage: React.FC<CoverPageProps> = ({ onNavigate, activeStudentN
           </div>
         </div>
 
-        {/* PETUNJUK PERMAINAN & TEACHER LINK */}
+        {/* PETUNJUK PERMAINAN, DAFTAR PUSTAKA & TEACHER LINK */}
         <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
           <button
             onClick={() => {
@@ -174,6 +174,17 @@ export const CoverPage: React.FC<CoverPageProps> = ({ onNavigate, activeStudentN
           >
             <Compass className="w-4 h-4 text-amber-500" />
             <span>PETUNJUK PERMAINAN</span>
+          </button>
+
+          <button
+            onClick={() => {
+              audioManager.playClickSound();
+              onNavigate('bibliography');
+            }}
+            className="bg-white hover:bg-sky-50 active:scale-95 text-[#123D68] border-2 border-sky-300 font-bold text-xs sm:text-sm py-2 px-4 rounded-xl shadow-sm transition-all flex items-center gap-2 cursor-pointer"
+          >
+            <BookmarkCheck className="w-4 h-4 text-sky-600" />
+            <span>DAFTAR PUSTAKA &amp; SUMBER</span>
           </button>
 
           <button

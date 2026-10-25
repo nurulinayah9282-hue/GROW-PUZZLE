@@ -46,6 +46,7 @@ import { TeacherSettings } from './components/TeacherSettings';
 import { DashboardGuruLivePage } from './components/DashboardGuruLivePage';
 import { CodeLoginPage } from './components/CodeLoginPage';
 import { BattleExplorersPage } from './components/battle/BattleExplorersPage';
+import { BibliographyPage } from './components/BibliographyPage';
 import { StudentCodeEntry } from './data/studentCodes';
 import { createDefaultProgress } from './data/defaultStudents';
 import { Users } from 'lucide-react';
@@ -705,6 +706,10 @@ export const App: React.FC = () => {
 
         {currentPage === 'battle_explorers' && (
           <BattleExplorersPage onNavigate={handleNavigate} />
+        )}
+
+        {currentPage === 'bibliography' && (
+          <BibliographyPage onNavigate={handleNavigate} />
         )}
       </main>
 

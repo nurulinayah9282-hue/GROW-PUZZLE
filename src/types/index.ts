@@ -16,7 +16,8 @@ export type NavigationPage =
   | 'teacher_settings'
   | 'dashboard_guru'
   | 'login'
-  | 'battle_explorers';
+  | 'battle_explorers'
+  | 'bibliography';
 
 export interface StudentProfile {
   id: string; // e.g., 'siswa_01'
@@ -64,6 +65,8 @@ export interface Question {
   correctIndex: number;
   hint: string;
   explanation: string;
+  guidingFeedback?: string;
+  hasStimulusImage?: boolean;
   mapVisual?: {
     type: 'compass' | 'symbol' | 'grid' | 'route' | 'legend';
     symbolIcon?: string;
